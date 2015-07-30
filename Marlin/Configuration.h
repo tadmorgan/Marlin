@@ -104,7 +104,7 @@
 // 147 is Pt100 with 4k7 pullup
 // 110 is Pt100 with 1k pullup (non standard)
 
-#define TEMP_SENSOR_0 6
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 6
@@ -129,7 +129,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 270
+#define HEATER_0_MAXTEMP 290
 #define HEATER_1_MAXTEMP 245
 #define HEATER_2_MAXTEMP 245
 #define BED_MAXTEMP 200
@@ -159,10 +159,15 @@
   #define PID_dT ((OVERSAMPLENR * 10.0)/(F_CPU / 64.0 / 256.0)) //sampling period of the temperature routine
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
+// E3D V6
+      #define DEFAULT_Kp 50.49
+      #define DEFAULT_Ki 6.29
+      #define DEFAULT_Kd 101.34
+
 // Ultimaker
-    #define  DEFAULT_Kp 22.2
-    #define  DEFAULT_Ki 1.08
-    #define  DEFAULT_Kd 114
+//    #define  DEFAULT_Kp 22.2
+//    #define  DEFAULT_Ki 1.08
+//    #define  DEFAULT_Kd 114
 
 // MakerGear
 //    #define  DEFAULT_Kp 7.0
@@ -334,9 +339,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
-#define X_MAX_POS 200
+#define X_MAX_POS 190
 #define X_MIN_POS 0
-#define Y_MAX_POS 200
+#define Y_MAX_POS 190
 #define Y_MIN_POS 0
 #define Z_MAX_POS 175
 #define Z_MIN_POS 0
@@ -479,7 +484,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,90}  // default steps per unit for ultimaker {78.7402,78.7402,200*8/3,760*1.1}920
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,97.27}  // default steps per unit for ultimaker {78.7402,78.7402,200*8/3,760*1.1}920
 #define DEFAULT_MAX_FEEDRATE          {250, 250, 2, 22}    // (mm/sec)    
 #define DEFAULT_MAX_ACCELERATION      {1000,1000,5,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
