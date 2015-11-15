@@ -342,6 +342,8 @@ Here are some standard links for getting your machine calibrated:
 
 #define ENDSTOPPULLUP_XMIN
 #define ENDSTOPPULLUP_YMIN
+#define ENDSTOPPULLUP_XMAX
+#define ENDSTOPPULLUP_YMAX
 
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
@@ -479,12 +481,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
-    #define LEFT_PROBE_BED_POSITION 15
-    #define RIGHT_PROBE_BED_POSITION 170
-    #define FRONT_PROBE_BED_POSITION 20
-    #define BACK_PROBE_BED_POSITION 170
+    #define LEFT_PROBE_BED_POSITION 36
+    #define RIGHT_PROBE_BED_POSITION 190
+    #define FRONT_PROBE_BED_POSITION 5
+    #define BACK_PROBE_BED_POSITION 190
 
-    #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
+    #define MIN_PROBE_EDGE 0 // The Z probe minimum square sides can be no smaller than this.
 
     // Set the number of grid points per dimension.
     // You probably don't need more than 3 (squared=9).
